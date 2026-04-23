@@ -1,0 +1,15 @@
+{
+  "name": "Performance - LLMService Latency Measurement",
+  "description": "Measures the latency of LLMService.validate_payload for a single payload.",
+  "test_type": "performance",
+  "input": "Call LLMService.validate_payload with a valid payload and record latency.",
+  "output": "Latency in milliseconds",
+  "success_criteria": [
+    "Latency is recorded",
+    "Latency is within acceptable limits (e.g., < 1500ms)"
+  ],
+  "error_scenarios": [
+    "LLM API is slow",
+    "Network delays"
+  ]
+}
