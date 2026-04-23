@@ -1,0 +1,15 @@
+{
+  "name": "Security - API Key Validation",
+  "description": "Tests that Config._validate_api_keys raises errors when required API keys are missing for the configured provider.",
+  "test_type": "security",
+  "input": "Set MODEL_PROVIDER to 'azure' and remove AZURE_OPENAI_API_KEY from config; call Config._validate_api_keys.",
+  "output": "ValueError raised for missing API key",
+  "success_criteria": [
+    "ValueError is raised",
+    "Error message indicates missing API key"
+  ],
+  "error_scenarios": [
+    "API key validation does not raise error",
+    "Incorrect error message"
+  ]
+}
