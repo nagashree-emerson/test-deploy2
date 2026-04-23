@@ -1,0 +1,16 @@
+{
+  "name": "Integration - Observability Lifespan Initialization",
+  "description": "Tests that the _obs_lifespan async context manager initializes observability services and logs configuration summary.",
+  "test_type": "integration",
+  "input": "Start FastAPI app with lifespan=_obs_lifespan",
+  "output": "Observability services initialized, logs contain configuration summary",
+  "success_criteria": [
+    "Observability database is connected",
+    "Telemetry monitoring is enabled",
+    "Logs contain expected configuration details"
+  ],
+  "error_scenarios": [
+    "Database connection fails",
+    "Telemetry initialization fails"
+  ]
+}
