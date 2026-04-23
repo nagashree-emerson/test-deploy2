@@ -1,0 +1,15 @@
+{
+  "name": "Security - Content Safety Guardrails Enforcement",
+  "description": "Ensures that the with_content_safety decorator enforces guardrails and blocks unsafe content in LLM output.",
+  "test_type": "security",
+  "input": "Simulate LLM output containing unsafe content (e.g., credentials, toxic code) and call sanitize_llm_output.",
+  "output": "Sanitized output with unsafe content removed or flagged",
+  "success_criteria": [
+    "Unsafe content is detected",
+    "Output is sanitized or error is raised"
+  ],
+  "error_scenarios": [
+    "Unsafe content passes through",
+    "Decorator fails to block content"
+  ]
+}
