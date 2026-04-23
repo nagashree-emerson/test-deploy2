@@ -1,0 +1,16 @@
+{
+  "name": "Security - Exception Handling for Malformed Requests",
+  "description": "Ensures that the FastAPI exception handlers return safe, non-leaking error messages for malformed JSON or invalid requests.",
+  "test_type": "security",
+  "input": "POST /validate with malformed JSON or invalid request body.",
+  "output": "JSON error response with generic error message and no sensitive information",
+  "success_criteria": [
+    "Error response is returned",
+    "No sensitive information is leaked",
+    "Error message is generic and safe"
+  ],
+  "error_scenarios": [
+    "Sensitive information is exposed",
+    "Error handler fails"
+  ]
+}
