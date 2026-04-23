@@ -1,0 +1,16 @@
+{
+  "name": "Functional - Invalid Payload Structure",
+  "description": "Validates that the /validate endpoint correctly identifies an invalid payload (missing required fields) and returns appropriate error messages.",
+  "test_type": "functional",
+  "input": "POST /validate with a payload missing required fields or with incorrect types.",
+  "output": "JSON response with valid=false and errors containing relevant messages",
+  "success_criteria": [
+    "response is not None",
+    "response['valid'] is False",
+    "response['errors'] contains at least one error message"
+  ],
+  "error_scenarios": [
+    "LLM returns non-JSON output",
+    "Agent fallback response is triggered"
+  ]
+}
