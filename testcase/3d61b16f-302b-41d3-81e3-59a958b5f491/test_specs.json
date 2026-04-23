@@ -1,0 +1,15 @@
+{
+  "name": "Integration - LLMService Client Initialization",
+  "description": "Tests that LLMService.get_llm_client correctly initializes and returns the Azure OpenAI async client when API key and endpoint are configured.",
+  "test_type": "integration",
+  "input": "Call LLMService.get_llm_client with valid Config.AZURE_OPENAI_API_KEY and Config.AZURE_OPENAI_ENDPOINT.",
+  "output": "Azure OpenAI client instance",
+  "success_criteria": [
+    "client is not None",
+    "client is instance of openai.AsyncAzureOpenAI"
+  ],
+  "error_scenarios": [
+    "Missing API key",
+    "Invalid endpoint"
+  ]
+}
