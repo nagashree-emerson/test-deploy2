@@ -1,0 +1,16 @@
+{
+  "name": "Functional - Valid Payload Validation",
+  "description": "Validates that the /validate endpoint correctly identifies a valid ecommerce email payload and returns the expected response.",
+  "test_type": "functional",
+  "input": "POST /validate with a well-formed payload containing all required fields and correct types.",
+  "output": "JSON response with valid=true and errors=[]",
+  "success_criteria": [
+    "response is not None",
+    "response['valid'] is True",
+    "response['errors'] is an empty list"
+  ],
+  "error_scenarios": [
+    "LLM returns unexpected output",
+    "Agent fails to parse LLM response"
+  ]
+}
