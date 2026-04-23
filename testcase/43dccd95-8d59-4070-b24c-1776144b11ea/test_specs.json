@@ -1,0 +1,16 @@
+{
+  "name": "Integration - Agent End-to-End Validation Workflow",
+  "description": "Tests the end-to-end workflow from FastAPI endpoint to LLMService and back, ensuring the agent processes a payload and returns a valid response.",
+  "test_type": "integration",
+  "input": "POST /validate with a valid payload; agent calls LLMService.validate_payload and processes response.",
+  "output": "JSON response with valid and errors fields",
+  "success_criteria": [
+    "response is not None",
+    "response contains 'valid' and 'errors'",
+    "LLMService.validate_payload is called"
+  ],
+  "error_scenarios": [
+    "LLMService fails",
+    "Agent returns fallback response"
+  ]
+}
