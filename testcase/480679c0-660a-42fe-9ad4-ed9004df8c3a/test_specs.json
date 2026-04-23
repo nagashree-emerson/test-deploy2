@@ -1,0 +1,17 @@
+{
+  "name": "Performance - High Load Validation",
+  "description": "Tests the /validate endpoint under high concurrent load to ensure stability and acceptable response times.",
+  "test_type": "performance",
+  "input": "Simultaneously POST multiple (e.g., 100) requests to /validate with valid payloads.",
+  "output": "All responses received, response times recorded",
+  "success_criteria": [
+    "All responses are received",
+    "Average response time remains below threshold (e.g., 3000ms)",
+    "No server crashes"
+  ],
+  "error_scenarios": [
+    "Server overload",
+    "Dropped requests",
+    "Timeouts"
+  ]
+}
