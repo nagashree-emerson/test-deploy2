@@ -1,0 +1,15 @@
+{
+  "name": "Performance - Validate Endpoint Response Time",
+  "description": "Measures the response time of the /validate endpoint under normal load.",
+  "test_type": "performance",
+  "input": "POST /validate with a valid payload and measure response time.",
+  "output": "Response time in milliseconds",
+  "success_criteria": [
+    "Response time is less than 2000ms",
+    "No timeout errors"
+  ],
+  "error_scenarios": [
+    "LLM call is slow",
+    "Agent processing exceeds timeout"
+  ]
+}
